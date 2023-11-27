@@ -1,7 +1,11 @@
 {
     "java.compile.nullAnalysis.mode": "automatic",
     "cSpell.words": [
+        "Bklight",
         "carepal",
+        "cupertino",
+        "Ionicons",
+        "riverpod",
         "screenutil"
     ]
 }

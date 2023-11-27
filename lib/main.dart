@@ -1,4 +1,6 @@
+import 'package:carepal/common/utils/constants.dart';
 import 'package:carepal/features/activities/pages/home_screen.dart';
+import 'package:carepal/features/onboarding/pages/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -22,11 +24,12 @@ class MyApp extends StatelessWidget {
           title: 'CarePal',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-          
+            scaffoldBackgroundColor: AppConst.kBkDark,
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home:  const HomeScreen(),
+          themeMode: ThemeMode.dark,
+          home:  const OnboardingScreen(),
         );
       }
     );
