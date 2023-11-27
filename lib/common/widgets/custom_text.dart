@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
-    super.key,
+    Key? key,
     this.keyboardType,
     required this.hintText,
     this.suffixIcon,
@@ -12,7 +12,7 @@ class CustomTextField extends StatelessWidget {
     this.hintStyle,
     required this.controller,
     this.onChanged,
-  });
+  }) : super(key: key);
 
   final TextInputType? keyboardType;
   final String hintText;
@@ -25,43 +25,45 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: AppConst.kWidth * 0.9,
+      width: double.infinity,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(
-          Radius.circular(AppConst.kRadius),
-        ),
+        color: AppConst.kLight,
+        borderRadius: BorderRadius.circular(AppConst.kRadius),
       ),
-      child: TextFormField(
-        keyboardType: keyboardType,
-        controller: controller,
-        cursorHeight: 25,
-        onChanged: onChanged,
-        style: appStyle(18, AppConst.kBkDark, FontWeight.w700),
-        decoration: InputDecoration(
-          hintText: hintText,
-          suffixIcon: suffixIcon,
-          prefixIcon: prefixIcon,
-          suffixIconColor: AppConst.kBkDark,
-          hintStyle: hintStyle,
-          errorBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.zero,
-            borderSide: BorderSide(color: AppConst.kRed, width: 0.5),
-          ),
-          focusedBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.zero,
-            borderSide: BorderSide(color: Colors.transparent, width: 0.5),
-          ),
-          focusedErrorBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.zero,
-            borderSide: BorderSide(color: AppConst.kRed, width: 0.5),
-          ),
-          disabledBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.zero,
-            borderSide: BorderSide(color: AppConst.kGreyDk, width: 0.5),
-          ),
-          enabledBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.zero,
-            borderSide: BorderSide(color: AppConst.kBkDark, width: 0.5),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: TextFormField(
+          keyboardType: keyboardType,
+          controller: controller,
+          cursorHeight: 25,
+          onChanged: onChanged,
+          style: appStyle(18, AppConst.kBkDark, FontWeight.w700),
+          decoration: InputDecoration(
+            hintText: hintText,
+            suffixIcon: suffixIcon,
+            prefixIcon: prefixIcon,
+            suffixIconColor: AppConst.kBkDark,
+            hintStyle: hintStyle,
+            errorBorder: const OutlineInputBorder(
+              borderRadius: BorderRadius.zero,
+              borderSide: BorderSide(color: AppConst.kRed, width: 0.5),
+            ),
+            focusedBorder: const OutlineInputBorder(
+              borderRadius: BorderRadius.zero,
+              borderSide: BorderSide(color: Colors.transparent, width: 0.5),
+            ),
+            focusedErrorBorder: const OutlineInputBorder(
+              borderRadius: BorderRadius.zero,
+              borderSide: BorderSide(color: AppConst.kRed, width: 0.5),
+            ),
+            disabledBorder: const OutlineInputBorder(
+              borderRadius: BorderRadius.zero,
+              borderSide: BorderSide(color: AppConst.kGreyDk, width: 0.5),
+            ),
+            enabledBorder: const OutlineInputBorder(
+              borderRadius: BorderRadius.zero,
+              borderSide: BorderSide(color: AppConst.kBkDark, width: 0.5),
+            ),
           ),
         ),
       ),
